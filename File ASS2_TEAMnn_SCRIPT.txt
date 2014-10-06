@@ -1,7 +1,7 @@
 --Write your teams details here:
 -- Team No: 
 -- Stu ID 1: 209522X          Surname: Nguyen           Firstname: Hoang
--- Stu ID 2:           Surname:                  Firstname:
+-- Stu ID 2: 1799215   Surname: Che              Firstname: Hung
 -- Stu ID 3:           Surname:                  Firstname:
 -- Stu ID 4:           Surname:                  Firstname:
 
