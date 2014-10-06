@@ -1,0 +1,146 @@
+--Write your teams details here:
+-- Team No: 
+-- Stu ID 1:           Surname:                  Firstname:
+-- Stu ID 2:           Surname:                  Firstname:
+-- Stu ID 3:           Surname:                  Firstname:
+-- Stu ID 4:           Surname:                  Firstname:
+
+
+SET SERVEROUTPUT ON;
+
+--Place all DROP object statements below this line (tables, sequences etc)
+
+
+/
+--Place all CREATE SEQUENCE statements below this line (separate each statement with a line containing / )
+
+
+/
+--Place all CREATE TABLE statements below this line  (separate each statement with a line containing / )
+
+
+/
+--Place the GENDERSPELLING statements statement below this line  
+
+
+/
+--====================================================================================================
+--Place CREATE OR REPLACE SP_CLEAN_PRODUCT code below this line (or leave blank if not attempted)
+
+
+/
+--Place CREATE OR REPLACE SP_UPLOAD_PRODUCT code below this line (or leave blank if not attempted)
+
+
+/
+--Place code anonymous block to execute the above SPs below this line (or leave blank if not attempted)
+
+
+/
+--====================================================================================================
+--Place CREATE OR REPLACE SP_CLEAN_CUST_BRIS code below this line (or leave blank if not attempted)
+
+
+/
+--Place CREATE OR REPLACE SP_UPLOAD_CUST_BRIS code below this line (or leave blank if not attempted)
+
+
+/
+--Place code that executes the above SPs below this line (or leave blank if not attempted)
+
+
+/
+--====================================================================================================
+--Place CREATE OR REPLACE SP_CLEAN_SALES_BRIS code below this line (or leave blank if not attempted)
+
+
+/
+--Place CREATE OR REPLACE SP_UPLOAD_SALES_BRIS code below this line (or leave blank if not attempted)
+
+
+/
+--Place code that executes the above SPs below this line (or leave blank if not attempted)
+
+
+/
+--====================================================================================================
+--Place CREATE OR REPLACE SP_CLEAN_CUST_MELB code below this line (or leave blank if not attempted)
+
+
+/
+--Place CREATE OR REPLACE SP_UPLOAD_CUST_MELB code below this line (or leave blank if not attempted)
+
+
+/
+--====================================================================================================
+--Place CREATE OR REPLACE SP_CLEAN_SALES_MELB code below this line (or leave blank if not attempted)
+
+
+/
+--Place CREATE OR REPLACE SP_UPLOAD_SALES_MELB code below this line (or leave blank if not attempted)
+
+
+/
+--Place code that executes the above SPs below this line (or leave blank if not attempted)
+
+
+/
+--====================================================================================================
+--QUERY 1
+--Modify this query so that it matches the table names and column names used in your database
+PROMPT ***** QUERY 1 Filter count *****
+SELECT   FILTERNO, ACTION, COUNT(*)
+FROM     ERROREVENT
+GROUP BY FILTERNO, ACTION
+ORDER BY 1,2;
+
+
+--QUERY  2
+--This query counts the number of rows in each of the DW% tables
+PROMPT ***** QUERY 2 DW Row Count *****
+SELECT TABLE_NAME,
+   TO_NUMBER(EXTRACTVALUE(XMLTYPE(DBMS_XMLGEN.GETXML('SELECT COUNT(*) C FROM '
+   || TABLE_NAME)),'/ROWSET/ROW/C')) ROW_COUNT
+   FROM USER_TABLES
+   WHERE TABLE_NAME IN (SELECT TABLE_NAME FROM USER_TABLES
+WHERE TABLE_NAME  LIKE 'A2%')
+ORDER BY 1;
+
+
+--QUERY  3
+--Place SQL Query that lists total sales for each weekday 
+--below this line (or leave blank if not attempted)
+PROMPT ***** QUERY 3 Weekday sales *****
+
+
+--QUERY  4
+--Place SQL Query that lists each customer category total sales 
+--below this line (or leave blank if not attempted
+PROMPT ***** QUERY 4 Customer Category Sales*****
+
+
+--QUERY  5
+--Place SQL Query that lists sales for each product manufacturer
+--below this line (or leave blank if not attempted)
+PROMPT ***** QUERY 5 Sales by Manufacturer*****
+
+
+--QUERY  6
+--Place SQL Query that lists top 10 customers 
+--below this line (or leave blank if not attempted)
+PROMPT ***** QUERY 6 Top 10 Customers *****
+
+
+--QUERY  7
+--Place SQL Query that lists bottom 10 products
+--below this line (or leave blank if not attempted)
+PROMPT ***** QUERY 7 Bottom 10 products *****
+
+
+--QUERY  8
+/--Place SQL Query that lists top City in each State
+--below this line (or leave blank if not attempted)
+PROMPT ***** QUERY 8 Top City in each State list *****
+
+
+
