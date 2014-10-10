@@ -16,7 +16,16 @@ SET SERVEROUTPUT ON;
 /
 --Place all CREATE TABLE statements below this line  (separate each statement with a line containing / )
 
-
+/*CREATE ERROR EVENT TABLE*/
+CREATE TABLE ERROR_EVENT (
+ERRORID INTERGER,
+SOURCE_ROWID ROWID,
+SOURCE_TABLE VARCHAR2(30),
+FILTER_ID INTEGER,
+DATE_TIME DATE,
+ACTION VARCHAR2(6),
+CONSTRAINT A3_ERROR_EVENT_ACTION
+CHECK (ACTION IN ('SKIP','MODIFY')) );
 /
 --Place the GENDERSPELLING statements statement below this line  
 
