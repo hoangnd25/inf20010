@@ -54,7 +54,9 @@ END;
 /
 --Place CREATE OR REPLACE SP_UPLOAD_PRODUCT code below this line (or leave blank if not attempted)
 
-
+CREATE TABLE DWPROD (DWPRODID, DWSOURCETABLE, DWSOURCEID, PRODNAME, PRODCATNAME, 
+PRODSHIPNAME, PRODMANUNAME, PRODSHIPNAME);
+CREATE SEQUENCE DWPROD_SEQ;
 /
 --Place code anonymous block to execute the above SPs below this line (or leave blank if not attempted)
 
