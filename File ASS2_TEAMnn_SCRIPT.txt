@@ -12,13 +12,14 @@ SET SERVEROUTPUT ON;
 /
 --Place all CREATE SEQUENCE statements below this line (separate each statement with a line containing / )
 
+Create Sequence ErrorID_SEQ;
 
 /
 --Place all CREATE TABLE statements below this line  (separate each statement with a line containing / )
 
 /*CREATE ERROR EVENT TABLE*/
 CREATE TABLE ERROR_EVENT (
-ERRORID INTERGER,
+ERRORID INTEGER,
 SOURCE_ROWID ROWID,
 SOURCE_TABLE VARCHAR2(30),
 FILTER_ID INTEGER,
@@ -26,6 +27,12 @@ DATE_TIME DATE,
 ACTION VARCHAR2(6),
 CONSTRAINT A3_ERROR_EVENT_ACTION
 CHECK (ACTION IN ('SKIP','MODIFY')) );
+
+CREATE TABLE GENDERSPELLING (
+	BADGENDER VARCHAR2(20) PRIMARY KEY,
+	GOODGENDER VARCHAR(1)
+);
+
 /
 --Place the GENDERSPELLING statements statement below this line  
 
@@ -34,6 +41,15 @@ CHECK (ACTION IN ('SKIP','MODIFY')) );
 --====================================================================================================
 --Place CREATE OR REPLACE SP_CLEAN_PRODUCT code below this line (or leave blank if not attempted)
 
+CREATE OR REPLACE PROCEDURE SP_CLEAN_PRODUCT() AS
+
+INSERT INTO ERROR_EVENT (ERRORID,ROWID,SOURCE_TABLE,FILTER_ID,DATE_TIME,ACTION)
+	SELECT ErrorID_SEQ.NEXTVAL, ROWID, 'A2PRODUCT',1,SYSDATE,'MODIFY' FROM VLI.A2PRODUCT
+	WHERE PRODUCTCATEGORY NOT IN (SELECT PRODUCTCATEGORY FROM VLI.A2PRODCATEGORY);
+	
+
+BEGIN
+END;
 
 /
 --Place CREATE OR REPLACE SP_UPLOAD_PRODUCT code below this line (or leave blank if not attempted)
