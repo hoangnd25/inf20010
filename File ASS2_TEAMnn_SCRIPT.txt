@@ -389,7 +389,7 @@ END;
 --Modify this query so that it matches the table names and column names used in your database
 PROMPT ***** QUERY 1 Filter count *****
 SELECT   FILTERNO, ACTION, COUNT(*)
-FROM     ERROREVENT
+FROM     ERROR_EVENT
 GROUP BY FILTERNO, ACTION
 ORDER BY 1,2;
 
