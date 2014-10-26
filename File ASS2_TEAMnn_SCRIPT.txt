@@ -388,9 +388,9 @@ END;
 --QUERY 1
 --Modify this query so that it matches the table names and column names used in your database
 PROMPT ***** QUERY 1 Filter count *****
-SELECT   FILTERNO, ACTION, COUNT(*)
+SELECT   FILTER_ID, ACTION, COUNT(*)
 FROM     ERROR_EVENT
-GROUP BY FILTERNO, ACTION
+GROUP BY FILTER_ID, ACTION
 ORDER BY 1,2;
 
 
@@ -410,6 +410,12 @@ ORDER BY 1;
 --Place SQL Query that lists total sales for each weekday 
 --below this line (or leave blank if not attempted)
 PROMPT ***** QUERY 3 Weekday sales *****
+SELECT to_char(to_date(saledate,'dd/mm/yyyy'), 'DAY') AS WEEKDAY
+, COUNT(*) AS "TOTAL SALES"
+FROM DWSALE
+GROUP BY to_char(to_date(saledate,'dd/mm/yyyy'), 'DAY')
+ORDER BY WEEKDAY;
+--havn't tested yet
 
 
 --QUERY  4
