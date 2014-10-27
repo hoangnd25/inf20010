@@ -77,6 +77,9 @@ CREATE TABLE DWSALE (
 	SALEPRICE NUMBER
 );
 
+/
+--Place the GENDERSPELLING statements statement below this line  
+
 CREATE TABLE GENDERSPELLING (
 	BADGENDER VARCHAR2(20) PRIMARY KEY,
 	GOODGENDER VARCHAR(1)
@@ -91,10 +94,6 @@ INSERT INTO GENDERSPELLING VALUES('GENTLEMAN','M');
 INSERT INTO GENDERSPELLING VALUES('MM','M');
 INSERT INTO GENDERSPELLING VALUES('FF','F');
 INSERT INTO GENDERSPELLING VALUES('FEMAIL','F');
-
-/
---Place the GENDERSPELLING statements statement below this line  
-
 
 /
 --====================================================================================================
