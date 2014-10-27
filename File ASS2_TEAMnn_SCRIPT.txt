@@ -1,8 +1,8 @@
 --Write your teams details here:
 -- Team No: 
--- Stu ID 1: 209522X          Surname: Nguyen           Firstname: Hoang
+-- Stu ID 1: 209522X   Surname: Nguyen           Firstname: Hoang
 -- Stu ID 2: 1799215   Surname: Che              Firstname: Hung
--- Stu ID 3: 7240929     Surname:   Nguyen               Firstname: Tri Thuc
+-- Stu ID 3: 7240929   Surname: Nguyen           Firstname: Tri Thuc
 
 SET SERVEROUTPUT ON;
 
